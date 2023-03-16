@@ -1,3 +1,10 @@
 from django.db import models
 
-# Create your models here.
+class Department(models.Model):
+    title = models.CharField(max_length=100)
+
+class Employee(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    depoartment = models.ForeignKey(Department)
+    birthdate = models.DateTimeField(null= True, blank=True)
